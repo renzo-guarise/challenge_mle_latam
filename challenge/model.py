@@ -1,5 +1,3 @@
-import sys
-sys.path.append("..")
 import pandas as pd
 import pathlib
 import pickle
@@ -8,12 +6,25 @@ from typing import Tuple, Union, List
 from datetime import datetime
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import  OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.feature_selection import SelectKBest, f_classif
-from .config import *
+
+
+TOP_10_FEATURES = [
+    "OPERA_Latin American Wings", 
+    "MES_7",
+    "MES_10",
+    "OPERA_Grupo LATAM",
+    "MES_12",
+    "TIPOVUELO_I",
+    "MES_4",
+    "MES_11",
+    "OPERA_Sky Airline",
+    "OPERA_Copa Air"
+]
+
+DELAY_THRESHOLD_IN_MINUTES: int = 15
+
+THRESHOLD_PREDICT: float = 0.5
 
 FEATURE_COLUMNS =['OPERA', 'TIPOVUELO', 'MES']
 
