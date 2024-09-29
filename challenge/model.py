@@ -133,6 +133,5 @@ class DelayModel:
         Args:
             path (str): path where it is going to be save
         """
-        pathlib.Path("models").mkdir(exist_ok=True)
-        with open(f"models/{path}", "wb") as f_out:
+        with open(path, "wb") as f_out:
             pickle.dump(self, f_out)

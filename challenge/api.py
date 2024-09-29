@@ -1,9 +1,7 @@
-import sys
-sys.path.append("..")
 import fastapi
 import pickle
 import pandas as pd
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel
 from typing import List, Dict
 from fastapi import HTTPException
 from .model import *
@@ -13,7 +11,7 @@ model_lr = None
 
 try:
     # Load the model once during the startup of the FastAPI app
-    with open('models/model_v1.bin', 'rb') as f_in:
+    with open('model_v1.bin', 'rb') as f_in:
         model_lr = pickle.load(f_in)
     print("Model loaded successfully.")
 except FileNotFoundError:
