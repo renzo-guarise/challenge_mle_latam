@@ -1,3 +1,5 @@
+import sys
+sys.path.append("..")
 import unittest
 import pandas as pd
 
@@ -25,10 +27,10 @@ class TestModel(unittest.TestCase):
     ]
 
 
-    def setUp(self) -> None:
-        super().setUp()
-        self.model = DelayModel()
-        self.data = pd.read_csv(filepath_or_buffer="../data/data.csv")
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.model = DelayModel()
+        cls.data = pd.read_csv(filepath_or_buffer="data/data.csv")
         
 
     def test_model_preprocess_for_training(
