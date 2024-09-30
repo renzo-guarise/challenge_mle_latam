@@ -63,4 +63,4 @@ def model_pipeline(file_path: str, model_path: str):
     save_model(trained_model, model_path)
 
 if __name__ == "__main__":
-    model_pipeline("data/data.csv", "model_v1.bin")
+    model_pipeline("data/data.csv", "challenge/model_v1.bin")
