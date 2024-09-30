@@ -15,7 +15,7 @@ try:
         model_lr = pickle.load(f_in)
     print("Model loaded successfully.")
 except FileNotFoundError:
-    raise print("File not found. Please check the file path.")
+    print("File not found. Please check the file path.")
 except PermissionError:
     print("Permission denied. Please check your file permissions.")
 except pickle.UnpicklingError:
